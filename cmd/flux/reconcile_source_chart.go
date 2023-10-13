@@ -84,3 +84,7 @@ func (obj helmChartAdapter) getSource() (reconcileSource, types.NamespacedName) 
 		Namespace: obj.Namespace,
 	}
 }
+
+func (obj helmChartAdapter) hasReconciler() bool {
+	return true
+}

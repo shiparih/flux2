@@ -55,6 +55,10 @@ func (obj alertAdapter) successMessage() string {
 	return "Alert reconciliation completed"
 }
 
+func (a alertAdapter) hasReconciler() bool {
+	return false
+}
+
 func (a alertListAdapter) resumeItem(i int) resumable {
 	return &alertAdapter{&a.AlertList.Items[i]}
 }
