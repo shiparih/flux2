@@ -5,6 +5,8 @@ go 1.20
 // Fix CVE-2022-28948.
 replace gopkg.in/yaml.v3 => gopkg.in/yaml.v3 v3.0.1
 
+replace github.com/fluxcd/notification-controller/api => github.com/fluxcd/notification-controller/api v1.1.1-0.20230914202535-95628882ed67
+
 require (
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/ProtonMail/go-crypto v0.0.0-20230828082145-3c4c8a2d2371
