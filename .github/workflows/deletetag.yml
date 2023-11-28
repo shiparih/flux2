@@ -36,6 +36,7 @@ jobs:
         # Loop through tags and delete those older than 60 days
         for TAG in $TAGS; do
           TAG_DATE=$(git log -1 --format=%ai $TAG)
+          echo "tag date is $TAG_DATE"
           if [[ "$TAG_DATE" < "$OLDEST_DATE" ]]; then
             git tag -d $TAG
             git push origin :refs/tags/$TAG
