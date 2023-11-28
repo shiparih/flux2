@@ -1,6 +1,13 @@
 import java.text.SimpleDateFormat
 import java.util.Date
 
+Date parseStringToDate(String createdDateStr) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd HH:MM:SS")
+    dateFormat.timeZone = TimeZone.getTimeZone("UTC")
+    Date parsedDate = dateFormat.parse(createdDateStr)
+    return parsedDate
+}
+
 pipeline {
     agent any
     
