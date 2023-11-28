@@ -43,4 +43,4 @@ jobs:
           fi
         done
       env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        GITHUB_TOKEN: "$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"
