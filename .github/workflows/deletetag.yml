@@ -24,9 +24,11 @@ jobs:
       run: |
         # Set the date 30 days ago
         OLDEST_DATE=$(date -d "30 days ago" +%Y-%m-%d)
+        echo "oldest date is $OLDEST_DATE"
         
         # List all tags
         TAGS=$(git tag -l)
+        echo "tag is $TAG"
 
         # Loop through tags and delete those older than 60 days
         for TAG in $TAGS; do
