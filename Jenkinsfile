@@ -8,6 +8,7 @@ Date parseStringToDate(String createdDateStr) {
     return parsedDate
 }
 
+
 pipeline {
     agent any
     
@@ -20,7 +21,7 @@ pipeline {
                     def tags = sh(script: 'git tag -l', returnStdout: true).trim().split('\n')
                     for (def tag in tags) {
                         def tagDate = sh(script: "git log -1 --format=%ai ${tag}", returnStdout: true).trim()
-                        if (Date.parse("yyyy-MM-dd HH:mm:ss Z", tagDate) < oldestDate) {
+                        if (SimpleDateFormat(format).parse("yyyy-MM-dd HH:mm:ss Z", tagDate) < oldestDate) {
                             sh "git tag -d ${tag}"
                             sh "git push origin :refs/tags/${tag}"
                             echo "Deleted tag: ${tag}"
