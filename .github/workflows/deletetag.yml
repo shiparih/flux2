@@ -30,6 +30,9 @@ jobs:
         echo "oldest date is $OLDEST_DATE"
         
         # List all tags
+        git tag -l
+        git tag -n
+        git tag
         TAGS=$(git tag -l)
         echo "Tags are $TAGS"
 
